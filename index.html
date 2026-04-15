@@ -3,243 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unish Niraula - Detailed Profile</title>
+    <title>Unish Niraula | Portfolio</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
     <style>
-        body {
+        :root {
+            --primary: #4a8d8c;
+            --secondary: #ef8a76;
+            --dark: #2c3156;
+            --light-bg: #fcf4e8;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+
+        * {
             margin: 0;
-            padding: 40px 20px;
-            background-color: #fcf4e8;
-            background-image: linear-gradient(#e5d9c8 1px, transparent 1px);
-            background-size: 100% 30px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            background-image: radial-gradient(#e5d9c8 1px, transparent 1px);
+            background-size: 40px 40px;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-        }
-
-        .card-container {
-            background: white;
-            width: 100%;
-            max-width: 480px;
-            border-radius: 30px;
-            padding: 40px 25px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-        }
-
-        .profile-pic img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 0 0 1px #ddd;
-            object-fit: cover;
-        }
-
-        .role {
-            color: #4a8d8c;
-            font-size: 14px;
-            letter-spacing: 1.5px;
-            margin-top: 25px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .name {
-            color: #2c3156;
-            font-size: 32px;
-            letter-spacing: 2px;
-            margin: 5px 0;
-            font-weight: 800;
-        }
-
-        .divider {
-            width: 60px;
-            border: none;
-            border-top: 3px solid #ef8a76;
-            margin: 15px auto;
-        }
-
-        .section-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: #2c3156;
-            text-align: left;
-            margin: 30px 0 15px 5px;
-            text-transform: uppercase;
-            border-left: 4px solid #ef8a76;
-            padding-left: 12px;
-            letter-spacing: 1px;
-        }
-
-        /* Information Grid */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            text-align: left;
-            margin: 20px 0;
-            background: #fdfbf8;
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid #f0e6d8;
-        }
-
-        .info-item b {
-            color: #4a8d8c;
-            display: block;
-            font-size: 11px;
-            text-transform: uppercase;
-            margin-bottom: 3px;
-        }
-
-        .info-item span {
-            color: #333;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        /* List Styling */
-        .details-list {
-            text-align: left;
-            padding: 0 5px;
-        }
-
-        .detail-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
-            font-size: 14px;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        .detail-row i {
-            color: #ef8a76;
-            margin-top: 3px;
-            width: 16px;
-            text-align: center;
-        }
-
-        /* Hobbies Tags */
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 0 5px;
-        }
-
-        .tag {
-            background: #f0f7f7;
-            color: #4a8d8c;
-            padding: 6px 15px;
-            border-radius: 25px;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1px solid #dceeee;
-        }
-
-        .footer-section {
-            border-top: 1px solid #f0f0f0;
-            padding-top: 30px;
-            margin-top: 40px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .profile-pic-container {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .profile-pic-container img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
-        .social-icon:hover {
+        .profile-pic-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .role-badge {
+            background: var(--primary);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin: 10px 0;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        /* Container & Cards */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+
+        .section-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+        }
+
+        .line {
+            flex-grow: 1;
+            height: 2px;
+            background: var(--secondary);
+            opacity: 0.3;
+        }
+
+        /* Grid layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-tile {
+            padding: 15px;
+            border-radius: 15px;
+            background: rgba(0,0,0,0.02);
+        }
+
+        .info-tile small {
+            display: block;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .info-tile p {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Timeline for Education/Work */
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding-left: 10px;
+            border-left: 3px solid var(--secondary);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Tags */
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .tag:hover {
+            background: var(--primary);
+            color: white;
             transform: translateY(-5px);
         }
 
-        .fb { background-color: #1a747a; }
-        .ig { background-color: #ef6b4d; }
-        .yt { background-color: #2b7d7d; }
-        .tk { background-color: #000; }
+        /* Social Navigation */
+        .social-nav {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-        .footer-credit {
-            margin-top: 35px;
-            font-size: 12px;
-            color: #c5b399;
-            font-weight: 500;
+        .s-link {
+            width: 50px;
+            height: 50px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .s-link:hover {
+            background: var(--dark);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding-bottom: 50px;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .section-card { padding: 25px; }
+            header { height: auto; padding: 100px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="card-container">
-        <div class="profile-pic">
+    <header>
+        <div class="profile-pic-container reveal-top">
             <img src="https://www.image2url.com/r2/default/images/1776255063385-7329c0d0-6d35-4802-9589-6c2202324412.jpg" alt="Unish Niraula">
         </div>
-
-        <p class="role">Backend Developer</p>
-        <h1 class="name">UNISH NIRAULA</h1>
-        <hr class="divider">
-
-        <div class="info-grid">
-            <div class="info-item"><b>Birth Date</b><span>Nov 30, 2007</span></div>
-            <div class="info-item"><b>Status</b><span>Single</span></div>
-            <div class="info-item"><b>Father</b><span>Umanath Niraula</span></div>
-            <div class="info-item"><b>Mother</b><span>Dhanmaya Niraula</span></div>
+        <span class="role-badge reveal-top">Backend Developer</span>
+        <h1 class="reveal-top">UNISH NIRAULA</h1>
+        
+        <div class="social-nav reveal-bottom">
+            <a href="https://www.facebook.com/share/1SvRpGM69y/" target="_blank" class="s-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/unish.niraula_0/" target="_blank" class="s-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@unish.niraula_0" target="_blank" class="s-link"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@unish.niraula_0" target="_blank" class="s-link"><i class="fab fa-tiktok"></i></a>
         </div>
+    </header>
 
-        <div class="section-title">Work & Experience</div>
-        <div class="details-list">
-            <div class="detail-row">
-                <i class="fas fa-briefcase"></i>
-                <span>Member at <b>Leo Club Of Kathmandu</b></span>
+    <div class="container">
+        
+        <section class="section-card reveal-left">
+            <div class="section-header">
+                <h2>Identity</h2>
+                <div class="line"></div>
             </div>
-            <div class="detail-row">
-                <i class="fas fa-code"></i>
-                <span>Passionate Backend Developer focused on scalable systems.</span>
+            <div class="grid">
+                <div class="info-tile">
+                    <small>Date of Birth</small>
+                    <p>Nov 30, 2007</p>
+                </div>
+                <div class="info-tile">
+                    <small>Marital Status</small>
+                    <p>Single</p>
+                </div>
+                <div class="info-tile">
+                    <small>Father</small>
+                    <p>Umanath Niraula</p>
+                </div>
+                <div class="info-tile">
+                    <small>Mother</small>
+                    <p>Dhanmaya Niraula</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section-title">Education</div>
-        <div class="details-list">
-            <div class="detail-row"><i class="fas fa-graduation-cap"></i><span>Studied at <b>Kist College</b></span></div>
-            <div class="detail-row"><i class="fas fa-university"></i><span>Studied at <b>Budhanilkantha Pathshala</b></span></div>
-            <div class="detail-row"><i class="fas fa-school"></i><span>Studied at <b>Reliance Co-Ed</b></span></div>
-            <div class="detail-row"><i class="fas fa-child"></i><span>Studied at <b>Fairyland International School</b></span></div>
-        </div>
-
-        <div class="section-title">Hobbies & Interests</div>
-        <div class="tags-container">
-            <span class="tag"><i class="fas fa-music"></i> Music</span>
-            <span class="tag"><i class="fas fa-chess"></i> Chess</span>
-            <span class="tag"><i class="fas fa-terminal"></i> Coding</span>
-        </div>
-
-        <div class="footer-section">
-            <div class="social-links">
-                <a href="https://www.facebook.com/share/1SvRpGM69y/" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/unish.niraula_0?igsh=aDAyNjQ0d2poZjNn" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@unish.niraula_0?si=vEE93NATnwd3LLNV" target="_blank" class="social-icon yt"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@unish.niraula_0?_r=1&_t=ZS-95YneRYuBpC" target="_blank" class="social-icon tk"><i class="fab fa-tiktok"></i></a>
+        <section class="section-card reveal-right">
+            <div class="section-header">
+                <h2>Education & Experience</h2>
+                <div class="line"></div>
             </div>
-            <p class="footer-credit">© 2026 Unish Niraula | Designed for Excellence</p>
-        </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Leo Club Of Kathmandu</h3>
+                    <p>Active Member</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Kist College</h3>
+                    <p>Higher Studies</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Budhanilkantha Pathshala</h3>
+                    <p>Schooling</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="border: none;">
+                <div class="timeline-content">
+                    <h3>Reliance Co-Ed / Fairyland</h3>
+                    <p>Foundation Education</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card reveal-left">
+            <div class="section-header">
+                <h2>Interests</h2>
+                <div class="line"></div>
+            </div>
+            <div class="tag-group">
+                <div class="tag"><i class="fas fa-terminal"></i> Coding</div>
+                <div class="tag"><i class="fas fa-chess"></i> Chess</div>
+                <div class="tag"><i class="fas fa-music"></i> Music</div>
+                <div class="tag"><i class="fas fa-server"></i> Backend Systems</div>
+            </div>
+        </section>
+
     </div>
+
+    <footer>
+        <p>© 2026 Unish Niraula. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize ScrollReveal
+        const sr = ScrollReveal({
+            distance: '60px',
+            duration: 1500,
+            delay: 400,
+            reset: true // Set to false if you only want animations once
+        });
+
+        sr.reveal('.reveal-top', { origin: 'top', interval: 200 });
+        sr.reveal('.reveal-bottom', { origin: 'bottom' });
+        sr.reveal('.reveal-left', { origin: 'left' });
+        sr.reveal('.reveal-right', { origin: 'right' });
+    </script>
 
 </body>
 </html>
