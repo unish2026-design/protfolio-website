@@ -8,10 +8,10 @@
     <style>
         body {
             margin: 0;
-            padding: 20px;
-            background-color: #fcf4e8; /* Creamy notebook background */
+            padding: 40px 20px;
+            background-color: #fcf4e8;
             background-image: linear-gradient(#e5d9c8 1px, transparent 1px);
-            background-size: 100% 30px; /* Notebook line effect */
+            background-size: 100% 30px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
@@ -22,11 +22,11 @@
         .card-container {
             background: white;
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
             border-radius: 30px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
 
         .profile-pic img {
@@ -39,15 +39,17 @@
         }
 
         .role {
-            color: #4a8d8c; /* Teal color from image */
+            color: #4a8d8c;
             font-size: 14px;
             letter-spacing: 1px;
             margin-top: 25px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .name {
-            color: #2c3156; /* Deep blue/purple */
+            color: #2c3156;
             font-size: 28px;
             letter-spacing: 2px;
             margin: 0;
@@ -55,73 +57,136 @@
         }
 
         .divider {
-            width: 60px;
+            width: 50px;
             border: none;
-            border-top: 2px solid #ef8a76; /* Salmon divider */
-            margin: 20px auto;
+            border-top: 3px solid #ef8a76;
+            margin: 15px auto;
         }
 
-        .bio {
-            color: #666;
-            line-height: 1.6;
-            font-size: 15px;
-            margin-bottom: 40px;
+        /* New Sections Styling */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: left;
+            margin: 25px 0;
+            font-size: 14px;
+            background: #fdfbf8;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .info-item b {
+            color: #4a8d8c;
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .info-item span {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2c3156;
+            text-align: left;
+            margin: 20px 0 10px 5px;
+            text-transform: uppercase;
+            border-left: 3px solid #ef8a76;
+            padding-left: 10px;
+        }
+
+        .list-box {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .list-item i {
+            color: #ef8a76;
+            font-size: 12px;
+        }
+
+        .hobbies-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: #eef7f7;
+            color: #4a8d8c;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
         }
 
         .footer-section {
             border-top: 1px solid #f0f0f0;
-            padding-top: 30px;
+            padding-top: 25px;
         }
 
         .cta-button {
             display: inline-block;
             width: 100%;
-            padding: 15px 0;
+            padding: 12px 0;
             border: 1px solid #e0e0e0;
             border-radius: 12px;
             text-decoration: none;
             color: #333;
-            font-weight: 500;
-            margin-bottom: 25px;
-            transition: background 0.3s;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.3s;
         }
 
         .cta-button:hover {
-            background-color: #f9f9f9;
+            background-color: #2c3156;
+            color: white;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allows icons to wrap if space is tight */
-            gap: 15px;
+            gap: 12px;
         }
 
         .social-icon {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-decoration: none;
-            font-size: 20px;
-            transition: opacity 0.3s;
+            font-size: 18px;
+            transition: transform 0.3s;
         }
 
-        .social-icon:hover {
-            opacity: 0.8;
-        }
+        .social-icon:hover { transform: translateY(-3px); }
 
         .fb { background-color: #1a747a; }
         .ig { background-color: #ef6b4d; }
         .yt { background-color: #2b7d7d; }
-        .tk { background-color: #000000; } /* TikTok black background */
+        .tk { background-color: #000; }
 
         .footer-credit {
-            margin-top: 40px;
-            font-size: 12px;
+            margin-top: 30px;
+            font-size: 11px;
             color: #c5b399;
         }
     </style>
@@ -137,12 +202,28 @@
         <h1 class="name">UNISH NIRAULA</h1>
         <hr class="divider">
 
-        <p class="bio">
-            The source of the target is to live in the path of the concern. 
-            My need is also for the rolling members of the world. 
-            The heart of the world is a lake, and it is said to be seated. 
-            Life is a time of power to bring forth some.
-        </p>
+        <div class="info-grid">
+            <div class="info-item"><b>Birthday</b><span>Nov 30, 2007</span></div>
+            <div class="info-item"><b>Status</b><span>Single</span></div>
+            <div class="info-item"><b>Father</b><span>Umanath Niraula</span></div>
+            <div class="info-item"><b>Mother</b><span>Dhanmaya Niraula</span></div>
+        </div>
+
+        <div class="section-title">Experience & Education</div>
+        <div class="list-box">
+            <div class="list-item"><i class="fas fa-briefcase"></i> <span>Leo Club Of Kathmandu</span></div>
+            <div class="list-item"><i class="fas fa-graduation-cap"></i> <span>Kist College</span></div>
+            <div class="list-item"><i class="fas fa-university"></i> <span>Budhanilkantha Pathshala</span></div>
+            <div class="list-item"><i class="fas fa-school"></i> <span>Reliance Co-Ed</span></div>
+            <div class="list-item"><i class="fas fa-child"></i> <span>Fairyland International School</span></div>
+        </div>
+
+        <div class="section-title">Hobbies</div>
+        <div class="hobbies-tags">
+            <span class="tag"><i class="fas fa-music"></i> Music</span>
+            <span class="tag"><i class="fas fa-chess"></i> Chess</span>
+            <span class="tag"><i class="fas fa-code"></i> Coding</span>
+        </div>
 
         <div class="footer-section">
             <a href="mailto:unish.2026@gmail.com" class="cta-button">
