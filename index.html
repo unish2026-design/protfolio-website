@@ -4,8 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unish Niraula - Profile</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #fcf4e8; /* Creamy notebook background */
+            background-image: linear-gradient(#e5d9c8 1px, transparent 1px);
+            background-size: 100% 30px; /* Notebook line effect */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card-container {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 30px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .profile-pic img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 1px #ddd;
+            object-fit: cover;
+        }
+
+        .role {
+            color: #4a8d8c; /* Teal color from image */
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            color: #2c3156; /* Deep blue/purple */
+            font-size: 28px;
+            letter-spacing: 2px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .divider {
+            width: 60px;
+            border: none;
+            border-top: 2px solid #ef8a76; /* Salmon divider */
+            margin: 20px auto;
+        }
+
+        .bio {
+            color: #666;
+            line-height: 1.6;
+            font-size: 15px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 25px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #f9f9f9;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .fb { background-color: #1a747a; }
+        .ig { background-color: #ef6b4d; }
+        .yt { background-color: #2b7d7d; }
+
+        .footer-credit {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #c5b399;
+        }
+    </style>
 </head>
 <body>
 
@@ -37,8 +149,7 @@
             </div>
         </div>
 
-        <p class="footer-credit">
-</p>
+        <p class="footer-credit">( Made with Carrd )</p>
     </div>
 
 </body>
