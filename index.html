@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unish Niraula - Profile</title>
+    <title>Unish Niraula - Detailed Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -31,8 +31,8 @@
         }
 
         .profile-pic img {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             border: 4px solid #fff;
             box-shadow: 0 0 0 1px #ddd;
@@ -42,22 +42,22 @@
         .role {
             color: #4a8d8c;
             font-size: 14px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-top: 25px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
         }
 
         .name {
             color: #2c3156;
-            font-size: 28px;
+            font-size: 32px;
             letter-spacing: 2px;
             margin: 5px 0;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .divider {
-            width: 50px;
+            width: 60px;
             border: none;
             border-top: 3px solid #ef8a76;
             margin: 15px auto;
@@ -68,50 +68,121 @@
             font-weight: 700;
             color: #2c3156;
             text-align: left;
-            margin: 25px 0 12px 5px;
+            margin: 30px 0 15px 5px;
             text-transform: uppercase;
-            border-left: 3px solid #ef8a76;
-            padding-left: 10px;
+            border-left: 4px solid #ef8a76;
+            padding-left: 12px;
+            letter-spacing: 1px;
         }
 
-        /* Feed Containers */
-        .embed-wrapper {
-            background: #f9f9f9;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #eee;
-            overflow: hidden;
-        }
-
+        /* Information Grid */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 15px;
             text-align: left;
             margin: 20px 0;
-            font-size: 13px;
             background: #fdfbf8;
-            padding: 15px;
-            border-radius: 15px;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #f0e6d8;
         }
 
-        .info-item b { color: #4a8d8c; display: block; font-size: 10px; text-transform: uppercase; }
+        .info-item b {
+            color: #4a8d8c;
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
 
-        .list-box { text-align: left; margin-bottom: 20px; }
-        .list-item { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 14px; color: #555; }
-        .list-item i { color: #ef8a76; font-size: 12px; }
+        .info-item span {
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
 
-        .footer-section { border-top: 1px solid #f0f0f0; padding-top: 25px; margin-top: 20px; }
-        .social-links { display: flex; justify-content: center; gap: 12px; }
-        .social-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 18px; }
+        /* List Styling */
+        .details-list {
+            text-align: left;
+            padding: 0 5px;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .detail-row i {
+            color: #ef8a76;
+            margin-top: 3px;
+            width: 16px;
+            text-align: center;
+        }
+
+        /* Hobbies Tags */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 5px;
+        }
+
+        .tag {
+            background: #f0f7f7;
+            color: #4a8d8c;
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid #dceeee;
+        }
+
+        .footer-section {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 30px;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
 
         .fb { background-color: #1a747a; }
         .ig { background-color: #ef6b4d; }
         .yt { background-color: #2b7d7d; }
         .tk { background-color: #000; }
 
-        .footer-credit { margin-top: 30px; font-size: 11px; color: #c5b399; }
+        .footer-credit {
+            margin-top: 35px;
+            font-size: 12px;
+            color: #c5b399;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -126,45 +197,49 @@
         <hr class="divider">
 
         <div class="info-grid">
-            <div class="info-item"><b>Birthday</b><span>Nov 30, 2007</span></div>
+            <div class="info-item"><b>Birth Date</b><span>Nov 30, 2007</span></div>
             <div class="info-item"><b>Status</b><span>Single</span></div>
             <div class="info-item"><b>Father</b><span>Umanath Niraula</span></div>
             <div class="info-item"><b>Mother</b><span>Dhanmaya Niraula</span></div>
         </div>
 
-        <div class="section-title">Featured Content</div>
-        
-        <div class="embed-wrapper">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/unish.niraula_0/" data-instgrm-version="14" style="width:100%;"></blockquote>
-        </div>
-
-        <div class="embed-wrapper">
-            <iframe width="100%" height="200" src="https://www.youtube.com/embed?listType=user_uploads&list=unish.niraula_0" frameborder="0" allowfullscreen style="border-radius:10px;"></iframe>
-        </div>
-
-        <div class="embed-wrapper">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unish.niraula_0" data-unique-id="unish.niraula_0" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unish.niraula_0" href="https://www.tiktok.com/@unish.niraula_0?refer=embed">@unish.niraula_0</a> </section> </blockquote>
+        <div class="section-title">Work & Experience</div>
+        <div class="details-list">
+            <div class="detail-row">
+                <i class="fas fa-briefcase"></i>
+                <span>Member at <b>Leo Club Of Kathmandu</b></span>
+            </div>
+            <div class="detail-row">
+                <i class="fas fa-code"></i>
+                <span>Passionate Backend Developer focused on scalable systems.</span>
+            </div>
         </div>
 
         <div class="section-title">Education</div>
-        <div class="list-box">
-            <div class="list-item"><i class="fas fa-graduation-cap"></i> <span>Kist College</span></div>
-            <div class="list-item"><i class="fas fa-university"></i> <span>Budhanilkantha Pathshala</span></div>
+        <div class="details-list">
+            <div class="detail-row"><i class="fas fa-graduation-cap"></i><span>Studied at <b>Kist College</b></span></div>
+            <div class="detail-row"><i class="fas fa-university"></i><span>Studied at <b>Budhanilkantha Pathshala</b></span></div>
+            <div class="detail-row"><i class="fas fa-school"></i><span>Studied at <b>Reliance Co-Ed</b></span></div>
+            <div class="detail-row"><i class="fas fa-child"></i><span>Studied at <b>Fairyland International School</b></span></div>
+        </div>
+
+        <div class="section-title">Hobbies & Interests</div>
+        <div class="tags-container">
+            <span class="tag"><i class="fas fa-music"></i> Music</span>
+            <span class="tag"><i class="fas fa-chess"></i> Chess</span>
+            <span class="tag"><i class="fas fa-terminal"></i> Coding</span>
         </div>
 
         <div class="footer-section">
             <div class="social-links">
                 <a href="https://www.facebook.com/share/1SvRpGM69y/" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/unish.niraula_0/" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@unish.niraula_0" target="_blank" class="social-icon yt"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@unish.niraula_0" target="_blank" class="social-icon tk"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/unish.niraula_0?igsh=aDAyNjQ0d2poZjNn" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@unish.niraula_0?si=vEE93NATnwd3LLNV" target="_blank" class="social-icon yt"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@unish.niraula_0?_r=1&_t=ZS-95YneRYuBpC" target="_blank" class="social-icon tk"><i class="fab fa-tiktok"></i></a>
             </div>
+            <p class="footer-credit">© 2026 Unish Niraula | Designed for Excellence</p>
         </div>
-
-        <p class="footer-credit">© 2026 Unish Niraula</p>
     </div>
 
-    <script async src="//www.instagram.com/embed.js"></script>
-    <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
