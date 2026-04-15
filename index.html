@@ -10,11 +10,13 @@
     
     <style>
         :root {
-            --primary: #4a8d8c;
-            --secondary: #ef8a76;
-            --dark: #1a1e35;
-            --glass: rgba(255, 255, 255, 0.95);
-            --bg: #f8f1e7;
+            --primary: #555555; /* Mid-gray for primary elements */
+            --secondary: #999999; /* Lighter gray for accents */
+            --dark: #1a1a1a; /* Very dark gray/black */
+            --glass: rgba(255, 255, 255, 0.95); /* Keep glass slightly off-white */
+            --bg: #ffffff; /* Stark white background */
+            --text-main: #222222; /* Near black for main text */
+            --text-invert: #ffffff; /* White text for dark backgrounds */
         }
 
         * {
@@ -26,10 +28,11 @@
 
         body {
             background-color: var(--bg);
-            background-image: radial-gradient(#d9cebd 1px, transparent 1px);
+            /* Minimalist grid for B&W theme */
+            background-image: linear-gradient(#e0e0e0 1px, transparent 1px), linear-gradient(90deg, #e0e0e0 1px, transparent 1px);
             background-size: 30px 30px;
             font-family: 'Inter', -apple-system, sans-serif;
-            color: var(--dark);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
@@ -48,8 +51,8 @@
             width: 160px;
             height: 160px;
             border-radius: 50%;
-            border: 6px solid white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 6px solid var(--dark); /* B&W: Black border for pic */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* Slightly darker shadow */
             margin-bottom: 20px;
         }
 
@@ -58,11 +61,12 @@
             font-weight: 800;
             letter-spacing: -2px;
             margin-bottom: 10px;
+            color: var(--dark);
         }
 
         .hero p {
             font-size: 1.1rem;
-            color: var(--primary);
+            color: var(--primary); /* Gray for role */
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -80,8 +84,8 @@
             border-radius: 40px;
             padding: 50px;
             margin-bottom: 60px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); /* Darker shadow */
+            border: 2px solid #eaeaea; /* Light gray border instead of subtle gradient */
         }
 
         h2 {
@@ -90,13 +94,14 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            color: var(--dark);
         }
 
         h2::after {
             content: "";
             flex: 1;
             height: 2px;
-            background: var(--secondary);
+            background: var(--dark); /* Black line */
             opacity: 0.2;
         }
 
@@ -108,7 +113,7 @@
         }
 
         .detail-item small {
-            color: var(--primary);
+            color: var(--primary); /* Gray for labels */
             font-weight: 800;
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -117,11 +122,12 @@
         .detail-item p {
             font-size: 1.1rem;
             font-weight: 500;
+            color: var(--text-main);
         }
 
         /* Education/Experience Timeline */
         .timeline {
-            border-left: 3px solid var(--primary);
+            border-left: 3px solid var(--dark); /* Black timeline */
             padding-left: 30px;
             margin-left: 10px;
         }
@@ -139,24 +145,32 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: var(--secondary);
+            background: var(--primary); /* Gray dots */
         }
 
         /* Social Section (The "Last" Section) */
         .social-section {
-            background: var(--dark);
-            color: white;
+            background: var(--dark); /* Keep dark for invert theme */
+            color: var(--text-invert);
             padding: 80px 20px;
             text-align: center;
             border-radius: 60px 60px 0 0;
         }
 
         .social-title {
-            color: var(--secondary);
+            color: var(--secondary); /* Gray for small label */
             text-transform: uppercase;
             letter-spacing: 4px;
             font-size: 0.9rem;
             margin-bottom: 10px;
+        }
+
+        .social-section h2 {
+            color: var(--text-invert);
+        }
+
+        .social-section h2::after {
+            background: var(--text-invert);
         }
 
         .social-links {
@@ -164,6 +178,7 @@
             justify-content: center;
             gap: 25px;
             margin: 40px 0;
+            flex-wrap: wrap; /* Handle wrapping on very small screens */
         }
 
         .social-btn {
@@ -175,14 +190,31 @@
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
-            color: white;
+            color: var(--text-invert);
             text-decoration: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent; /* Prepare for hover border */
         }
 
         .social-btn:hover {
-            background: var(--secondary);
+            background: rgba(255,255,255,0.2);
             transform: translateY(-10px);
+            border-color: var(--text-invert);
+        }
+
+        /* Specific style for email icon for emphasis */
+        .email-btn {
+            background: rgba(255,255,255,0.15);
+            font-weight: bold; /* Make the icon slightly thicker */
+        }
+
+        .email-btn:hover {
+             box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1rem;
         }
 
         .footer-info {
@@ -194,6 +226,8 @@
         @media (max-width: 600px) {
             .hero h1 { font-size: 2.5rem; }
             .card { padding: 30px; }
+            .social-links { gap: 15px; }
+            .social-btn { width: 55px; height: 55px; font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -255,13 +289,16 @@
         <h2>Digital Presence</h2>
         
         <div class="social-links">
-            <a href="https://www.facebook.com/share/1SvRpGM69y/" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/unish.niraula_0/" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@unish.niraula_0" target="_blank" class="social-btn"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@unish.niraula_0" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1SvRpGM69y/" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/unish.niraula_0/" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@unish.niraula_0" target="_blank" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@unish.niraula_0" target="_blank" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="mailto:unish.2026@gmail.com" class="social-btn email-btn" title="Send Email"><i class="far fa-envelope"></i></a>
         </div>
 
-        <p>Feel free to reach out via email at <strong>unish.2026@gmail.com</strong></p>
+        <div class="contact-info">
+            <p>Or reach out directly via email at <br> <strong>unish.2026@gmail.com</strong></p>
+        </div>
         
         <div class="footer-info">
             <p>© 2026 Unish Niraula. Built with passion and code.</p>
